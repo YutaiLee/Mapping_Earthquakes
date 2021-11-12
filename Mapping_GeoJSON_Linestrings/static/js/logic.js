@@ -14,7 +14,7 @@ let dark = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/dark-v10/tiles/{
 
 // Create a base layer that holds both maps.
 let baseMaps = {
-  Street: streets,
+  Light: light,
   Dark: dark
 };
 
@@ -22,13 +22,13 @@ let baseMaps = {
 let map = L.map('mapid', {
   center: [44.0, -80.0],
   zoom: 2,
-  layers: [streets]
+  layers: [light]
 })
 
 // Pass our map layers into our layers control and add the layers control to the map.
 L.control.layers(baseMaps).addTo(map);
 // Then we add our 'graymap' tile layer to the map.
-Streets.addTo(map);
+light.addTo(map);
 
 
 // Accessing the Toronto airline routes GeoJSON URL.
